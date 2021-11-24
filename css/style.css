@@ -28,12 +28,6 @@ cite {
     font-size: 1.2rem;
 }
 
-
-.text-list{
-    text-align: left;
-    margin : 1vw 15vw;
-}
-
 #img-div {
     background: white;
     padding: 2vw;
@@ -50,6 +44,12 @@ cite {
     height: auto;
 }
 
+.text-list{
+    line-height: 2;
+    text-align: left;
+    margin : 1vw 15vw;
+}
+
 #books-gallery {
     display: flex;
     flex-direction: row;
@@ -60,7 +60,7 @@ cite {
 .fig-gallery {
     padding: 0.1rem;
     margin: 0.1rem 0.5rem;
-    border: 2px solid gray;
+    border: 2px solid darkgrey;
     border-radius: 5px;
     box-shadow: 0 2px 5px 1px grey;
     width: 10rem;
@@ -68,17 +68,13 @@ cite {
 }
 
 a:hover .fig-gallery {
-    border-color: blue;
+    border-color: darkblue;
     box-shadow: 0 2px 5px 1px blue;
 }
 
 .img-gallery {
     width: 10rem;
     height: 15rem;
-}
-
-.fig-gallery figcaption {
-
 }
 
 .bottom-line {
