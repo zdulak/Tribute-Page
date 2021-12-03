@@ -1,5 +1,7 @@
 :root{
     font-size: 16px;
+    --contact-margin: 1rem;
+    --contact-block-width: 50vw;
 }
 
 body {
@@ -95,20 +97,23 @@ a:hover .fig-gallery {
 }
 
 .contact-line {
-    width: 50vw;
+    width: var(--contact-block-width);
     margin-bottom: 1rem;
 }
 
 #contact-block {
-    background: white;
-    width: 50vw;
+    width: var(--contact-block-width);
     height: 40vw;
     border-radius: 1rem;
-    border: 2px solid darkgrey;
+    border: 2px solid black;
     box-shadow: 1px 3px 5px 5px grey;
+    background: white;
+    /*background: rgba(27, 31, 34, 0.85);*/
+    /*color: white;*/
+
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(8, 1fr);
+    grid-template-rows: repeat(4, 1fr) 2fr 2fr repeat(2, 1fr);
     grid-template-areas: ". . . return"
                          "name-label . email-label ."
                          "name name email email"
@@ -116,7 +121,7 @@ a:hover .fig-gallery {
                          "msg msg msg msg"
                          "msg msg msg msg"
                          "send . . reset"
-                         "github fb . .";
+                         "links . . .";
     align-items: center;
     justify-items: center;
     justify-content: center;
@@ -126,29 +131,29 @@ a:hover .fig-gallery {
     background: black;
     width: 1.5rem;
     height: 1.5rem;
+    margin-left: var(--contact-margin);
 
+}
+
+.contact-link {
+    margin-right: calc(var(--contact-margin) * 0.5);
 }
 
 .contact-input {
     justify-self: stretch;
-    margin: 0 1rem;
+    align-self: stretch;
+    margin: 0 var(--contact-margin);
 }
 
 label {
     justify-self: start;
-    margin:  0 1rem;
+    align-self: end;
+    margin:  0.5rem var(--contact-margin);
 }
 
 #return {
     grid-area: return;
-}
-
-#github {
-    grid-area: github;
-}
-
-#fb {
-    grid-area: fb;
+    justify-self: end;
 }
 
 label[for="contact-name"] {
@@ -177,9 +182,21 @@ label[for="contact-message"] {
 
 button[type="submit"] {
     grid-area: send;
+    justify-self: start;
+    margin: 0 var(--contact-margin);
 }
 
 button[type="reset"] {
     grid-area: reset;
+    justify-self: end;
+    margin: 0 var(--contact-margin);
 }
+
+#contact-links {
+    grid-area: links;
+    justify-self: start;
+    display: flex;
+    justify-content: flex-start;
+}
+
 
