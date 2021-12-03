@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Contact Page</title>
+</head>
+<body>
+    <header>
+        <h1 id="contact-label">Contact</h1>
+        <hr class="contact-line">
+    </header>
+    <main>
+        <form id="contact-block" action="mailto: dpzdulski@gmail.com?subject=Lem-Tribute-Page-Contact" method="post" enctype="text/plain" autocomplete="on">
+            <a id="return" class="contact-link" href="Index.html"></a>
+            <label for="contact-name">Name</label>
+            <input id="contact-name" class="contact-input" name="Name" type="text" placeholder="Enter your name" required>
+            <label for="contact-email">Email</label>
+            <input id="contact-email" class="contact-input" name="Email" type="email" placeholder="Enter your email" required>
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" class="contact-input" name="Message" rows="5" cols="50" placeholder="Enter your message"></textarea>
+            <button class="contact-button" type="submit">Send</button>
+            <button class="contact-button" type="reset">Reset</button>
+            <a id="github" class="contact-link" href="https://github.com/zdulak" target="_blank"></a>
+            <a id="fb" class="contact-link" href="https://www.facebook.com/damian.p.zdulski" target="_blank"></a>
+        </form>
+    </main>
+</body>
+</html>

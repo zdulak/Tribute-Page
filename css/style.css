@@ -7,21 +7,16 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background: #eee;
-}
-
-a:link {
-    text-decoration: none;
+    background: hsl(0,0%,87%);
+    /*background: #eee;*/
 }
 
 a:visited {
     color: black;
-    text-decoration: none;
 }
 
 a:hover {
     color: blue;
-    text-decoration: underline;
 }
 
 cite {
@@ -65,6 +60,15 @@ cite {
     box-shadow: 0 2px 5px 1px grey;
     width: 10rem;
     height: 18rem;
+    background: white;
+}
+
+#books-gallery a:link {
+    text-decoration: none;
+}
+
+#books-gallery a:visited {
+    text-decoration: none;
 }
 
 a:hover .fig-gallery {
@@ -78,7 +82,104 @@ a:hover .fig-gallery {
 }
 
 .bottom-line {
-    width: 70vw;
+    width: 80vw;
     margin-top: 1vw;
     margin-bottom: 1vw;
 }
+
+/*Content page specific styles*/
+
+#contact-label {
+    margin-top: 0.2rem;
+    margin-bottom: 0.1rem;
+}
+
+.contact-line {
+    width: 50vw;
+    margin-bottom: 1rem;
+}
+
+#contact-block {
+    background: white;
+    width: 50vw;
+    height: 40vw;
+    border-radius: 1rem;
+    border: 2px solid darkgrey;
+    box-shadow: 1px 3px 5px 5px grey;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-areas: ". . . return"
+                         "name-label . email-label ."
+                         "name name email email"
+                         "msg-label . . ."
+                         "msg msg msg msg"
+                         "msg msg msg msg"
+                         "send . . reset"
+                         "github fb . .";
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.contact-link {
+    background: black;
+    width: 1.5rem;
+    height: 1.5rem;
+
+}
+
+.contact-input {
+    justify-self: stretch;
+    margin: 0 1rem;
+}
+
+label {
+    justify-self: start;
+    margin:  0 1rem;
+}
+
+#return {
+    grid-area: return;
+}
+
+#github {
+    grid-area: github;
+}
+
+#fb {
+    grid-area: fb;
+}
+
+label[for="contact-name"] {
+    grid-area: name-label;
+}
+
+#contact-name {
+    grid-area: name;
+}
+
+label[for="contact-email"] {
+    grid-area: email-label;
+}
+
+#contact-email {
+    grid-area: email;
+}
+
+label[for="contact-message"] {
+    grid-area: msg-label;
+}
+
+#contact-message {
+    grid-area: msg;
+}
+
+button[type="submit"] {
+    grid-area: send;
+}
+
+button[type="reset"] {
+    grid-area: reset;
+}
+
