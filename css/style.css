@@ -2,6 +2,9 @@
     font-size: 16px;
     --contact-margin: 1rem;
     --contact-block-width: 50vw;
+    --contact-background: rgb(31,35, 38);
+    --contact-background-hovered: rgb(51, 52, 56);
+    --contact-border: 2px solid white;
 }
 
 body {
@@ -105,15 +108,20 @@ a:hover .fig-gallery {
     width: var(--contact-block-width);
     height: 40vw;
     border-radius: 1rem;
-    border: 2px solid black;
+    border: var(--contact-border);
     box-shadow: 1px 3px 5px 5px grey;
-    background: white;
-    /*background: rgba(27, 31, 34, 0.85);*/
-    /*color: white;*/
+    background: var(--contact-background);
+    color: white;
+    font-size: 1rem;
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr) 2fr 2fr repeat(2, 1fr);
+
+    /*@media only screen and (min-width: 480px) {*/
+
+    /*}*/
+
+    grid-template-columns: repeat(4, minmax(1px, 1fr));
+    grid-template-rows: repeat(4, minmax(1px, 1fr)) 2fr 2fr repeat(2, minmax(1px, 1fr));
     grid-template-areas: ". . . return"
                          "name-label . email-label ."
                          "name name email email"
@@ -128,27 +136,48 @@ a:hover .fig-gallery {
 }
 
 .contact-link {
-    background: black;
-    width: 1.5rem;
-    height: 1.5rem;
+    margin-right: calc(var(--contact-margin) * 0.5);
     margin-left: var(--contact-margin);
-
 }
 
-.contact-link {
-    margin-right: calc(var(--contact-margin) * 0.5);
+/*margin property works only with before*/
+a.contact-link i:before {
+    margin: 1vh 0;
+}
+
+a.contact-link i{
+    font-size: 2rem;
+    color: grey;
+}
+
+a.contact-link i:hover {
+    color: white;
 }
 
 .contact-input {
     justify-self: stretch;
     align-self: stretch;
     margin: 0 var(--contact-margin);
+    background: var(--contact-background);
+    color: white;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: var(--contact-border);
+}
+
+.contact-input:focus {
+    background: var(--contact-background-hovered);
+}
+
+textarea {
+    resize: none;
+    overflow: auto;
 }
 
 label {
     justify-self: start;
     align-self: end;
-    margin:  0.5rem var(--contact-margin);
+    margin: 0.5rem var(--contact-margin);
 }
 
 #return {
@@ -183,13 +212,12 @@ label[for="contact-message"] {
 button[type="submit"] {
     grid-area: send;
     justify-self: start;
-    margin: 0 var(--contact-margin);
 }
 
 button[type="reset"] {
     grid-area: reset;
     justify-self: end;
-    margin: 0 var(--contact-margin);
+
 }
 
 #contact-links {
@@ -199,4 +227,18 @@ button[type="reset"] {
     justify-content: flex-start;
 }
 
+button {
+    margin: 0 var(--contact-margin);
+    border: var(--contact-border);
+    background: transparent;
+    border-radius: 0.3rem;
+    color: white;
+    font-size: 1rem;
+    height: 70%;
+    width: 7vw;
+    cursor: pointer;
+}
 
+button:hover {
+    background: var(--contact-background-hovered);
+}
